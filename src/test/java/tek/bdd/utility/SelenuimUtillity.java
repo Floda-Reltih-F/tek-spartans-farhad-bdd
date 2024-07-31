@@ -1,4 +1,4 @@
-package tek.bdd.base.Utillity;
+package tek.bdd.utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
