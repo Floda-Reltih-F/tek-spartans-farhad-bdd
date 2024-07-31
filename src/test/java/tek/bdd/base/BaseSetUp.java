@@ -8,7 +8,7 @@ import java.time.Duration;
 public class BaseSetUp {
 
     // Encapsulating web driver instance
-    private static WebDriver driver = new ChromeDriver();
+    private static WebDriver driver;
     public void setUpBrowser(){
 
         // web Driver instance
