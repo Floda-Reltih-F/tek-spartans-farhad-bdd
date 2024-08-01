@@ -1,4 +1,5 @@
 package tek.bdd.utility;
+import io.cucumber.core.internal.com.fasterxml.jackson.databind.introspect.ObjectIdInfo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,8 +39,15 @@ public class SelenuimUtillity extends BaseSetUp {
    }
 
 
+    public boolean isElementEnabled(By locator) {
+        return waitForVisibility(locator)
+                .isEnabled();
+    }
 
-
+    public boolean isElementDisplayed(By locator) {
+        return waitForVisibility(locator)
+                .isDisplayed();
+    }
 
 
 }
