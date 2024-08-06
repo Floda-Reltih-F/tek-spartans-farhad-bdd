@@ -10,6 +10,7 @@ import tek.bdd.utility.SelenuimUtillity;
 
 public class SecurityTestSteps extends SelenuimUtillity {
 
+
     @When("user click on sign in link")
     public void user_click_on_sign_in_link() {
         clickOnElement(HomePage.SING_IN_LINK);
@@ -39,5 +40,12 @@ public class SecurityTestSteps extends SelenuimUtillity {
     public void user_should_be_able_to_see_account_link() {
         boolean isAccountDisplayed = isElementDisplayed(HomePage.ACCOUNT_LINK);
         Assert.assertTrue(isAccountDisplayed);
+    }
+
+    @Then("user should see error {string}")
+    public void userShouldSeeError(String expectedErrorMessage) {
+        String actualErrorMessage = getElementText(SignInPage.ERROR_MESSAGE);
+
+        Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
     }
 }
