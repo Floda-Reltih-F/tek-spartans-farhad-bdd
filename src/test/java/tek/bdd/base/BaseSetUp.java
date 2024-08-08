@@ -3,6 +3,7 @@ package tek.bdd.base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -34,7 +35,9 @@ public class BaseSetUp {
     }
 
     public void setupBrowser() {
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
         String url = properties.getProperty("ui.url");
         driver.get(url);
         driver.manage().window().maximize();

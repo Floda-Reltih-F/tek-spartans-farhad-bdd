@@ -1,11 +1,11 @@
 package tek.bdd.utility;
-import io.cucumber.core.internal.com.fasterxml.jackson.databind.introspect.ObjectIdInfo;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import tek.bdd.base.BaseSetUp;
 
 import java.time.Duration;
+import java.util.List;
 
 public class SelenuimUtillity extends BaseSetUp {
 
@@ -45,4 +45,12 @@ public class SelenuimUtillity extends BaseSetUp {
         TakesScreenshot screenShot = (TakesScreenshot) getDriver();
         return screenShot.getScreenshotAs(OutputType.BYTES);
     }
+
+
+    public List<WebElement> getElements(By locator) {
+        return getWait().until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+    }
+
+
+
 }
