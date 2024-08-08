@@ -7,8 +7,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "classpath:features", // Directory for Feature file
         glue = "tek.bdd.steps", //Package for all the steps
-        dryRun = true, //set to true to scan feature for unimplemented steps
-        tags = "@UserStory1",
+        dryRun = false, //set to true to scan feature for unimplemented steps
+        tags = "@ValidateFieldErrorUsingMap",
         plugin = {
                 "html:target/cucumber_report/index.html"
         }
